@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\{TodosController, CategoryController};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('/todos', TodosController::class);
+//Route::post('/todos', TodosController::class . '@store');
+
+Route::resource('/categories', CategoryController::class);
+
